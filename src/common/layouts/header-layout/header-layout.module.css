@@ -1,0 +1,12 @@
+.wrapper {
+  height: 100vh;
+  padding: 0 20px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}

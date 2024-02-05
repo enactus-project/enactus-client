@@ -1,0 +1,33 @@
+.wrapper {
+  height: 54px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--box-color);
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.userIcon {
+  margin-right: 8px;
+  width: 30px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.email {
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--text-color-muted);
+  line-height: 1;
+}

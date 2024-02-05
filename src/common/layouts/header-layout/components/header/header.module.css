@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 14px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoLink {
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.subscriptionWrapper {
+  margin-right: 4px;
+}
