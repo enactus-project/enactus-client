@@ -1,9 +1,7 @@
-import { Button } from 'antd'
-
 function App() {
   return (
     <>
-      <Button>Hello</Button>
+      
     </>
   )
 }
