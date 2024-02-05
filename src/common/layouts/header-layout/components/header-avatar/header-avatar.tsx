@@ -2,6 +2,7 @@ import { Dropdown, MenuProps } from 'antd';
 
 import styles from './header-avatar.module.css';
 import { HeaderAvatarProps } from './header-avatar.types';
+import { CommonButton } from '@/common/components/common-button';
 
 export const HeaderAvatar = ({ user, onLogout }: HeaderAvatarProps) => {
   const items: MenuProps['items'] = [
@@ -13,7 +14,8 @@ export const HeaderAvatar = ({ user, onLogout }: HeaderAvatarProps) => {
   ];
 
   return (
-    <Dropdown menu={{ items }}>
+    <>
+      {user ? (    <Dropdown menu={{ items }}>
       <div className={styles.wrapper}>
         <img
           alt="Пользователь"
@@ -25,6 +27,10 @@ export const HeaderAvatar = ({ user, onLogout }: HeaderAvatarProps) => {
           <span className={styles.email}>{user?.email}</span>
         </div>
       </div>
-    </Dropdown>
-  );
+      </Dropdown>) :
+       (
+          <CommonButton>Войти</CommonButton>
+       )}
+    </>
+  )
 };

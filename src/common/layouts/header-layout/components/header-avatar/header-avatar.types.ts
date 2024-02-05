@@ -1,6 +1,6 @@
 import { User } from '@/common/entities';
 
 export interface HeaderAvatarProps {
-  user: User | null;
+  user?: User | null;
   onLogout?: () => void;
 }

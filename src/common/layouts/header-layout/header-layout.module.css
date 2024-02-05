@@ -1,6 +1,5 @@
 .wrapper {
   height: 100vh;
-  padding: 0 20px;
   display: grid;
   grid-template-rows: auto 1fr;
 }

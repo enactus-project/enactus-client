@@ -1,10 +1,33 @@
 .container {
   width: 100%;
   max-width: var(--max-content-width);
+  margin: 0px auto ;
+
+}
+
+.upper{
+  width: 100%;
   margin: 14px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.icon{
+  color: red;
+  margin-right: 2px;
+  font-size: 16px;
+}
+
+.down{
+  display: flex;
+  padding: 0 0 5px 0;
+  justify-content: space-between;
+}
+
+.line{
+  min-width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .logoLink {
@@ -18,4 +41,18 @@
 
 .subscriptionWrapper {
   margin-right: 4px;
+}
+
+.nav_right{
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_item{
+  color: #848484;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
 }

@@ -1,5 +1,5 @@
 .button {
-  height: var(--control-height);
+  min-height: var(--control-height);
 }
 
 .button.fullWidth {

@@ -3,10 +3,11 @@
     --text-color: #292d32;
     --text-color-muted: #787878;
     --secondary-text-color: #fcf5e5;
-    --background-color: #f3f2ef;
+    /* --background-color: #f3f2ef; */
+    --background-color: #fff;
     --box-color: #eae9e6;
   
-    --max-content-width: 1000px;
-    --control-height: 38px;
+    --max-content-width: 1140px;
+    --control-height: 24px;
   }
   

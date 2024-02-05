@@ -1,0 +1,12 @@
+.dropdown{
+    border: 0;
+    box-shadow: 0;
+    background-color:  var(--background-color);
+    box-shadow: none;
+}
+
+span{
+    font-weight: 500;
+    font-size: 15px;
+}
+
