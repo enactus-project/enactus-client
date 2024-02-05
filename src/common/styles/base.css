@@ -1,0 +1,22 @@
+:root, #root {
+    font-family: Roboto, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: var(--text-color);
+  
+    color-scheme: light;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: var(--primary-color);
+  }
+  
+  body {
+    background-color: var(--background-color);
+  }
+  
