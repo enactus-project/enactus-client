@@ -1,11 +1,16 @@
-import { Button } from 'antd'
+import Carousel from "./common/components/common-card-carousel/card-carousel"
 
 function App() {
-  return (
-    <>
-      <Button>Hello</Button>
-    </>
-  )
+	return (
+		<>
+			<Carousel />
+			<Carousel />
+			<Carousel />
+
+			<Carousel />
+			<Carousel />
+		</>
+	)
 }
 
 export default App
