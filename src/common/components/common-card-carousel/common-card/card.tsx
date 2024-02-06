@@ -1,6 +1,6 @@
 import styles from "./card.module.css"
 import { CardComponentProps } from "./card.type"
-const CardComponent = ({ name, cardicon, ...props }: CardComponentProps) => {
+const CardComponent = ({ name, cardicon }: CardComponentProps) => {
 	return (
 		<a href="https://google.com" className={styles.card_component}>
 			<div className={styles.card_wrapper}>

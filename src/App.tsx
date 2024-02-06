@@ -1,16 +1,12 @@
-import Carousel from "./common/components/common-card-carousel/card-carousel"
+import CarouselComponent from "./common/components/common-card-carousel/card-carousel"
 
 function App() {
 	return (
 		<>
-			<Carousel />
-			<Carousel />
-			<Carousel />
-
-			<Carousel />
-			<Carousel />
+			<CarouselComponent title={"Категории"} />
 		</>
 	)
 }
+// пока пропс оставил только в виде строчки переданной в компоненты(позже исправлю)
 
 export default App

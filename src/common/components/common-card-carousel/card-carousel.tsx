@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick-theme.css"
 import CardComponent from "./common-card/card"
 import styles from "./card-carousel.module.css"
 import { fake_data } from "./card-carousel.storage"
-
-function CustomArrows() {
+import { CardCarouselProps } from "./card-carousel.types"
+function CarouselComponent({ title }: CardCarouselProps) {
 	const settings = {
 		dots: true,
 		infinite: false,
@@ -13,8 +13,8 @@ function CustomArrows() {
 		slidesToScroll: 1,
 	}
 	return (
-		<div>
-			<p className={styles.slider_header}>Категории</p>
+		<>
+			<p className={styles.slider_header}>{title}</p>
 			<div className="slider-container">
 				<Slider {...settings}>
 					{fake_data.map(({ id, name, image }) => (
@@ -22,8 +22,8 @@ function CustomArrows() {
 					))}
 				</Slider>
 			</div>
-		</div>
+		</>
 	)
 }
 
-export default CustomArrows
+export default CarouselComponent

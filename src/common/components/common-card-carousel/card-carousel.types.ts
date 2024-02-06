@@ -1,1 +1,3 @@
-export interface CardCarouselProps {}
+export interface CardCarouselProps {
+	title?: string
+}
