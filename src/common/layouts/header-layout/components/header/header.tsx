@@ -25,9 +25,9 @@ export const Header = (({ }: HeaderProps) => {
             <HeaderLogo />
           </Link>
           <div className={styles.nav_right}>
-            <div>
+            <div className={styles.navigation_container}>
               <CommonBoxIcon name="bx bxs-location-plus" className={styles.icon} />
-              <span className={styles.nav_item}>Taraz</span>
+              <span className={styles.navigation}>Алматы</span>
             </div>
             <Link className={styles.nav_item} to = "/">Стать партнером</Link>
             <Link className={styles.nav_item} to = "/">Контакты</Link>

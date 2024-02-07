@@ -1,0 +1,24 @@
+.wrapper{
+    margin: 0 auto;
+    max-width: var(--max-content-width);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading{
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.search{
+    margin-top: 30px;
+}
+
+.left_side{
+    max-width: 50%;
+}

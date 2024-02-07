@@ -21,8 +21,9 @@
 	padding: 20px;
 }
 
-.naming {
+.heading {
 	align-self: flex-start;
+	font-weight: 500;
 }
 
 .image_wrapper {

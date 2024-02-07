@@ -1,4 +1,4 @@
-import CarouselComponent from "./common/components/common-card-carousel/card-carousel"
+import { CarouselComponent } from "./common/components/common-card-carousel"
 
 function App() {
 	return (

@@ -6,17 +6,26 @@
     color-scheme: light;
   }
   
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   
-  a {
-    color: var(--primary-color);
-  }
-  
-  body {
-    background-color: var(--background-color);
-  }
-  
+a {
+  color: var(--primary-color);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+#root .ant-input{
+  padding: 12px;
+}
+
+#root .ant-input-search-button{
+  height: 64px;
+}
+
+
