@@ -8,6 +8,7 @@
 	transition: ease 0.4s;
 	cursor: pointer;
 }
+
 .card_wrapper:hover {
 	background-color: #f5f5f5;
 	box-shadow: 2px -1px 1px #e0e0e0;

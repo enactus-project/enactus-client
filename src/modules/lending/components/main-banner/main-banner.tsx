@@ -24,7 +24,15 @@ export const MainBanner = () => {
 			<CarouselComponent title={"Категории"} />
 
 			<div>
-				<InstituionCard />
+				<InstituionCard
+					title={"1337 mental"}
+					description={"best place in the world"}
+					thumbnail={
+						"https://zapis.kz/data/pics/salon/pic-103764_small.jpg?v=0"
+					}
+					rating={"7.8"}
+					reviews={"ok"}
+				/>
 			</div>
 		</aside>
 	)
