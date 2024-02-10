@@ -7,7 +7,7 @@ export const InstituionCard = ({
 	thumbnail,
 	rating,
 	reviews,
-}): InstitutionCardProps => {
+}: InstitutionCardProps) => {
 	return (
 		<div className={styles.card_wrapper}>
 			<div className={styles.image_wrapper}>
