@@ -18,6 +18,8 @@ export const InstituionCard = ({
 				<div className={styles.description}>{description}</div>
 				<div className={styles.review_wrapper}>
 					<div>{rating}</div>
+					{rating >= 7 ? "smile" : "sad"}
+
 					<div>{reviews}</div>
 					<div>dollasign</div>
 				</div>
@@ -25,3 +27,4 @@ export const InstituionCard = ({
 		</div>
 	)
 }
+// i need to add images for smile and sad

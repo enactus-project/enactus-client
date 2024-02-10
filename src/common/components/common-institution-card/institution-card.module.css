@@ -10,8 +10,8 @@
 }
 
 .card_wrapper:hover {
-	background-color: #f5f5f5;
-	box-shadow: 2px -1px 1px #e0e0e0;
+	/* background-color: #f5f5f5; */
+	box-shadow: 5px 5px 5px #f5f5f5;
 }
 
 .image_wrapper {
