@@ -26,12 +26,13 @@ export const MainBanner = () => {
 			<div>
 				<InstituionCard
 					title={"1337 mental"}
-					description={"best place in the world"}
+					description={"the best place in the world"}
 					thumbnail={
 						"https://zapis.kz/data/pics/salon/pic-103764_small.jpg?v=0"
 					}
-					rating={"7.8"}
-					reviews={"ok"}
+					rating={7.8}
+					reviews={5}
+					price={13000}
 				/>
 			</div>
 		</aside>

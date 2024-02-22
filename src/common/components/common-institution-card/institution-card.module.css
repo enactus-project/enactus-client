@@ -35,9 +35,44 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 10px;
+	gap: 15px;
+	margin-top: 10px;
+	font-weight: 500;
 }
+
 .description {
 	color: #848484;
 	font-size: 0.9rem;
+}
+
+.review {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 3px;
+}
+
+.rating {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 3px;
+}
+
+.image_styling {
+	width: 20px;
+}
+
+.pricing {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 3px;
+}
+
+.price_img {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 3px;
 }
