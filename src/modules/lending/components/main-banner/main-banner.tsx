@@ -3,7 +3,7 @@ import { SearchComponent } from "./components/search-component/search-component"
 import styles from "./main-banner.module.css"
 import { CarouselComponent } from "@/common/components/common-card-carousel"
 import { InstituionCard } from "@/common/components/common-institution-card/institution-card"
-
+import { Accordion } from "@/extended/components/extended-faq/extended-faq"
 export const MainBanner = () => {
 	return (
 		<aside className={styles.wrapper}>
@@ -34,6 +34,9 @@ export const MainBanner = () => {
 					reviews={5}
 					price={13000}
 				/>
+			</div>
+			<div>
+				<Accordion />
 			</div>
 		</aside>
 	)
