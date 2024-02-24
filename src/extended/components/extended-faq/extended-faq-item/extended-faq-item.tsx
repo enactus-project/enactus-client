@@ -1,5 +1,6 @@
 import { useRef } from "react"
-export const AccordionItem = ({ faqItem, onClick, isOpen }) => {
+import { FaqItemProps } from "./extended-faq-item.types"
+export const AccordionItem = ({ faqItem, onClick, isOpen }: FaqItemProps) => {
 	const itemRef = useRef(null)
 	return (
 		<li className="accordion_item">
@@ -10,7 +11,7 @@ export const AccordionItem = ({ faqItem, onClick, isOpen }) => {
 				className="accordion_collapse"
 				style={
 					isOpen
-						? { height: itemRef.current.scrollHeight }
+						? { height: itemRef.current?.scrollHeight }
 						: {
 								height: "0px",
 						  }
