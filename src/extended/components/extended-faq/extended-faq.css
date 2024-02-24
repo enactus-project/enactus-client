@@ -41,3 +41,7 @@
 .accordion_collapse.open {
 	height: auto;
 }
+
+.faq_head {
+	text-align: center;
+}
