@@ -5,6 +5,7 @@
 }
 
 .accordion_header {
+	font-weight: 545;
 	border: none;
 	border-radius: 7px;
 	font-size: 17px;
