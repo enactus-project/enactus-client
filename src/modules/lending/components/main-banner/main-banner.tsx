@@ -3,7 +3,7 @@ import { SearchComponent } from "./components/search-component/search-component"
 import styles from "./main-banner.module.css"
 import { CarouselComponent } from "@/common/components/common-card-carousel"
 import { InstituionCard } from "@/common/components/common-institution-card/institution-card"
-
+import { Accordion } from "@/extended/components/extended-faq/extended-faq"
 export const MainBanner = () => {
 	return (
 		<aside className={styles.wrapper}>
@@ -26,14 +26,17 @@ export const MainBanner = () => {
 			<div>
 				<InstituionCard
 					title={"1337 mental"}
-					description={"best place in the world"}
+					description={"the best place in the world"}
 					thumbnail={
 						"https://zapis.kz/data/pics/salon/pic-103764_small.jpg?v=0"
 					}
-					rating={"7.8"}
-					reviews={"ok"}
+					rating={7.8}
+					reviews={5}
+					price={13000}
 				/>
 			</div>
+
+			<Accordion />
 		</aside>
 	)
 }

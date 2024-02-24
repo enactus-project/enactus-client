@@ -3,5 +3,6 @@ export interface InstitutionCardProps {
 	description: string
 	thumbnail: string
 	rating?: number
-	reviews: string
+	reviews?: number
+	price: number
 }
