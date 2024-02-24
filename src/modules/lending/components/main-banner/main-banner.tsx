@@ -35,9 +35,8 @@ export const MainBanner = () => {
 					price={13000}
 				/>
 			</div>
-			<div>
-				<Accordion />
-			</div>
+
+			<Accordion />
 		</aside>
 	)
 }

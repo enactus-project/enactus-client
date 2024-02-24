@@ -9,6 +9,8 @@ export const Accordion = () => {
 	}
 
 	return (
+		<>
+		<h1>FAQ</h1>
 		<ul className="accordion">
 			{faqList.map((faqItem, id) => {
 				return (
@@ -27,6 +29,6 @@ export const Accordion = () => {
 					</li>
 				)
 			})}
-		</ul>
+		</ul></>
 	)
 }
