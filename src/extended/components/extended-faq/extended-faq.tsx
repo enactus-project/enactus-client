@@ -1,5 +1,5 @@
 import { faqList } from "./extended-faq.storage"
-import "./extended-faq.css"
+import styles from "./extended-faq.module.css"
 import { useState } from "react"
 import { AccordionItem } from "./extended-faq-item/extended-faq-item"
 export const Accordion = () => {
@@ -7,8 +7,8 @@ export const Accordion = () => {
 
 	return (
 		<>
-			<h1 className="faq_head">FAQ</h1>
-			<ul className="accordion">
+			<h1 className={styles.faq_head}>FAQ</h1>
+			<ul className={styles.accordion}>
 				{faqList.map((faqItem, id) => {
 					return (
 						<AccordionItem

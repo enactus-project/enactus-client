@@ -1,0 +1,9 @@
+.accordion {
+	list-style-type: none;
+	margin-top: 16px;
+	padding: 14px;
+	border-radius: 7px;
+}
+.faq_head {
+	text-align: center;
+}

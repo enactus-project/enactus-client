@@ -1,5 +1,6 @@
 import { useRef } from "react"
 import { FaqItemProps } from "./extended-faq-item.types"
+import "./extended-faq-item.css"
 export const AccordionItem = ({ faqItem, onClick, isOpen }: FaqItemProps) => {
 	const itemRef = useRef(null)
 	return (
