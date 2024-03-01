@@ -1,10 +1,8 @@
 import { useState } from 'react';
+import { CommonAuthModal } from '@/common/components/common-auth-modal/common-auth-modal';
+import { CommonButton } from '@/common/components/common-button';
 
-import { CommonPurchaseModal } from '@/common/components/common-purchase-modal';
-
-import styles from './header-subscription.module.css';
-
-export const HeaderSubscription = () => {
+export const HeaderAuthButton = () => {
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
 
   const handlePurchaseModalOpen = () => {
@@ -17,10 +15,11 @@ export const HeaderSubscription = () => {
 
   return (
     <>
-      <button className={styles.button} onClick={handlePurchaseModalOpen}>
+      {/* <button className={styles.button} onClick={handlePurchaseModalOpen}>
         <img alt="Подписка" className={styles.icon} src="/flash.svg" />
-      </button>
-      <CommonPurchaseModal
+      </button> */}
+      <CommonButton onClick={handlePurchaseModalOpen}>Войти</CommonButton>
+      <CommonAuthModal
         isOpen={isPurchaseModalOpen}
         onClose={handlePurchaseModalClose}
       />

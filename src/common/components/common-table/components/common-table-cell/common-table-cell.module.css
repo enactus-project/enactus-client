@@ -1,0 +1,15 @@
+.cell {
+  display: inline-block;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.clickable {
+  color: var(--primary-color);
+  cursor: pointer;
+}

@@ -1,0 +1,24 @@
+.button {
+    height: 54px;
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    transition: 300ms;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+  
+  .button:hover {
+    background-color: #7d57ca0e;
+  }
+  
+  .icon {
+    width: 26px;
+    filter: invert(42%) sepia(20%) saturate(7401%) hue-rotate(238deg)
+      brightness(85%) contrast(83%);
+  }
+  

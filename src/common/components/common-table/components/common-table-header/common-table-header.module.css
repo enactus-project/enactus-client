@@ -1,0 +1,7 @@
+.header {
+  background-color: var(--background-color);
+}
+
+.header > span {
+  font-weight: 500;
+}

@@ -1,0 +1,36 @@
+.wrapper {
+  width: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actionsIcon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  color: red;
+  font-weight: 500;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+.publishButton {
+  display: flex;
+  align-items: center;
+  color: #569c30;
+  font-weight: 500;
+}
+
+.editButton,
+.hideButton {
+  display: flex;
+  align-items: center;
+  color: orange;
+  font-weight: 500;
+}

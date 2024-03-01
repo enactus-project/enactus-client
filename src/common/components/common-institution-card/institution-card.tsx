@@ -18,7 +18,7 @@ export const InstituionCard = ({
 				<div className={styles.description}>{description}</div>
 				<div className={styles.review_wrapper}>
 					<div>{rating}</div>
-					{rating >= 7 ? "smile" : "sad"}
+					{rating && rating >= 7 ? "smile" : "sad"}
 
 					<div>{reviews}</div>
 					<div>dollasign</div>

@@ -1,25 +1,24 @@
-//import { observer } from 'mobx-react-lite';
-//import { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
-
-//import { CurrentUserStoreContext } from '@/common/stores/current-user-store';
-
 import { Header } from './components/header';
 import styles from './header-layout.module.css';
+import { useAppSelector } from '@/store';
+import { selectUser, unsetAuth, unsetUser } from '@/store/slices/auth-slice';
+import { useAppDispatch } from '@/store';
+import { useDispatch } from 'react-redux';
 
 export const HeaderLayout = (() => {
-  //const navigate = useNavigate();
-  //const currentUserStore = useContext(CurrentUserStoreContext);
+  const dispatch = useDispatch()
+  const user = useAppSelector(selectUser);
 
-  // const handleLogout = () => {
-  //   currentUserStore.logout();
-  //   navigate('/auth/sign-in');
-  // };
-
+  const handleLogout = () => {
+    dispatch(unsetAuth());
+    dispatch(unsetUser());
+  };
+   
   return (
     <div className={styles.wrapper}>
       <div className={styles.headerWrapper}>
-        <Header />
+        <Header user={user} onLogout={handleLogout} />
       </div>
       <div className={styles.content}>
         <Outlet />

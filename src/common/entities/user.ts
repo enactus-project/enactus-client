@@ -1,8 +1,10 @@
 export interface User {
   id: string;
+  name: string | null;
   email: string;
-  firstName: string | null;
-  lastName: string | null;
   createdAt: string;
   updatedAt: string;
+  role: number;
+  deletedAt: string | null;
 }
+

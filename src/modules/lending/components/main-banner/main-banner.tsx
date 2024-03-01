@@ -1,4 +1,3 @@
-import { Image } from "antd"
 import { SearchComponent } from "./components/search-component/search-component"
 import styles from "./main-banner.module.css"
 import { CarouselComponent } from "@/common/components/common-card-carousel"
@@ -30,7 +29,7 @@ export const MainBanner = () => {
 					thumbnail={
 						"https://zapis.kz/data/pics/salon/pic-103764_small.jpg?v=0"
 					}
-					rating={"7.8"}
+					rating={7.8}
 					reviews={"ok"}
 				/>
 			</div>

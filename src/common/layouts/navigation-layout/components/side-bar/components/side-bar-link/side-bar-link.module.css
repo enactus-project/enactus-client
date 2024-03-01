@@ -1,0 +1,19 @@
+.wrapper {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.wrapper:hover,
+.active > .wrapper {
+  background-color: var(--background-color);
+}
+
+.icon {
+  width: 20px;
+}

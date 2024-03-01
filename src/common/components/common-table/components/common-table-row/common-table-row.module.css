@@ -1,0 +1,12 @@
+.row {
+  padding: 14px 20px;
+  display: grid;
+  align-items: center;
+  column-gap: 20px;
+  border-radius: 8px;
+  border-bottom: 1px solid var(--background-color);
+}
+
+.row:last-child {
+  border-bottom: none;
+}

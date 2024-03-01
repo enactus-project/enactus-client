@@ -14,8 +14,7 @@ import { HeaderDropDown } from '../header-dropdown/header-dropdown';
 import { firstItems } from './header-dropdown.items';
 import { CommonBoxIcon } from '@/common/components/common-box-icon';
 
-export const Header = (({ }: HeaderProps) => {
-  //const currentUserStore = useContext(CurrentUserStoreContext);
+export const Header = (({user, onLogout}: HeaderProps) => {
   
   return (
     <header className={styles.wrapper}>
@@ -31,7 +30,8 @@ export const Header = (({ }: HeaderProps) => {
             </div>
             <Link className={styles.nav_item} to = "/">Стать партнером</Link>
             <Link className={styles.nav_item} to = "/">Контакты</Link>
-            <HeaderAvatar/>
+            <Link className={styles.nav_item} to = "/platform">Платформа</Link>
+            <HeaderAvatar user={user} onLogout={onLogout}/>
           </div>
         </div>
         <div className={styles.down}>

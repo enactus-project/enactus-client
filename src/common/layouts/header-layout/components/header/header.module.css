@@ -2,7 +2,6 @@
   width: 100%;
   max-width: var(--max-content-width);
   margin: 0px auto ;
-
 }
 
 .upper{
@@ -55,7 +54,7 @@
 
 .nav_right{
   display: flex;
-  width: 40%;
+  gap: 15px;
   justify-content: space-between;
   align-items: center;
 }

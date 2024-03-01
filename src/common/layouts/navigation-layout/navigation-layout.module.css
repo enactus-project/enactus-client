@@ -1,0 +1,16 @@
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 70px 1fr;
+}
+
+.main {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.content {
+  height: 100%;
+  overflow-y: auto;
+}

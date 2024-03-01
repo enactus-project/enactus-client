@@ -1,0 +1,51 @@
+.content {
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+  }
+  
+  .card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--box-color);
+    border-radius: 14px;
+  }
+  
+  .card.highlighted {
+    background-color: #7d57ca16;
+    color: #7e57ca;
+    cursor: pointer;
+  }
+  
+  .title {
+    margin-bottom: 14px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .price {
+    margin-top: 14px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .featuresGrid {
+    display: grid;
+    row-gap: 4px;
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+  }
+  
+  .featureIcon {
+    margin-right: 6px;
+    font-size: 18px;
+  }
+  
+  .featureText {
+    font-size: 14px;
+  }
+  

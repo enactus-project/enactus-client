@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 6px;
+  width: 20px;
+}
+
+.text {
+  font-size: 14px;
+}
