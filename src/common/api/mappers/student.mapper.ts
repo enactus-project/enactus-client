@@ -6,6 +6,7 @@ export const mapStudentResponseToStudent = (
   id: payload.id,
   name: payload.name,
   surname: payload.surname,
+  grade: payload.grade,
   state: payload.state,
   description: payload.description,
   created_at: payload.created_at,

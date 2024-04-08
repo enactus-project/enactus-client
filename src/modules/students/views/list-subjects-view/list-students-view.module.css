@@ -10,6 +10,14 @@
   margin-bottom: 0;
 }
 
+.controls{
+  margin-bottom: 20px;
+}
+
+
+.content{
+  margin-top: 20px;
+}
 .subjectsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -17,6 +25,9 @@
   row-gap: 12px;
 }
 
+.select{
+  margin-top: 20px;
+}
 @media all and (max-width: 1300px) {
   .subjectsGrid {
     grid-template-columns: repeat(3, 1fr);

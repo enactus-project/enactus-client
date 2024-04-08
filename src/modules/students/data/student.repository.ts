@@ -30,11 +30,33 @@ import { Student } from '@/common/entities/student';
         });
     
         const { meta, admins } = response.data.data;
-    
+        console.log(admins, "ADMINS")
         return [
-          admins.map((admin) => mapStudentResponseToStudent(admin)),
-          mapPaginationMetaResponseToPaginationMeta(meta),
+            admins.map((admin) => mapStudentResponseToStudent(admin)),
+            mapPaginationMetaResponseToPaginationMeta(meta),
         ];
-      }
+    }
+
+    
+    async updateStudentById(
+        studentId: string,
+        payload: { name: string, surname: string, state: number, description: string },
+    ): Promise<Student> {
+        const response = await request.patch<{
+        data: { student: StudentResponse };
+        }>(`/v1/topics/${studentId}`, payload);
+
+        return mapStudentResponseToStudent(response.data.data.student);
+    }
+
+    async createStudent(payload: { name: string, surname: string, state: number, description: string }) {
+        const response = await request.post('/v1/students', payload);
+        console.log(response.data, "RESPONSE")
+        return mapStudentResponseToStudent(response.data.data.student);
+    }
+
+    // async deleteTopicById(topicId: string): Promise<void> {
+    //     await request.delete(`/v1/topics/${topicId}`);
+    // }
   }
   

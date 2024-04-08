@@ -1,30 +1,38 @@
 import App from "@/App"
 import { HeaderLayout } from "@/common/layouts/header-layout"
+import ModalLayout from "@/common/layouts/modal-layout"
 import NavigationLayout from "@/common/layouts/navigation-layout"
+import NonAuthGuardLayout from "@/common/layouts/non-auth-guard-layout"
+import LoginView from "@/modules/auth/view/login-view"
+import LoginForm from "@/modules/auth/view/login-view/components/login-form"
+
 import { MainBanner } from "@/modules/lending/components/main-banner/main-banner"
 import ListStudentsView from "@/modules/students/views/list-subjects-view"
 import { RouteObject } from "react-router-dom"
 
 export const routes: RouteObject[] = [
 	{
+		path: "/",
+		element: <ModalLayout/>,
 		children: [
+			
 			{
-				element: <HeaderLayout />,
+				element: <NonAuthGuardLayout />,
 				path: "/",
 				children: [
 					{
-						element: <MainBanner/>,
+						element: <LoginView/>,
 						path: '/'
 					},
 				],
 			},
 			{
-				path:'/',
 				element: <NavigationLayout/>,
+				path: "/",
 				children:[
 					{
 						element: <ListStudentsView />,
-						path: "/platform",
+						path: "/medblock",
 					}
 				]
 			},

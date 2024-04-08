@@ -5,9 +5,10 @@ import { HttpStatus } from '@/common/constants/http-status';
 import { unsetUser, unsetAuth } from '@/store/slices/auth-slice';
 
 export const useUnauthorizedHandler = () => {
-  const navigate = useNavigate();
+ 
   const dispatch = useAppDispatch();
-
+  const navigate = useNavigate();
+  
   return async <T>(request: Promise<T>) => {
     try {
       return await request;

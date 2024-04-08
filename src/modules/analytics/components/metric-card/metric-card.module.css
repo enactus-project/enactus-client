@@ -1,0 +1,45 @@
+.wrapper {
+  position: relative;
+  height: 100px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--box-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.loader.active {
+  opacity: 1;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--text-color-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--text-color);
+  line-height: 1;
+}

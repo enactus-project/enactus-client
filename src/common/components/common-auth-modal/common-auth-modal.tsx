@@ -9,7 +9,7 @@ export const CommonAuthModal = ({
 }: CommonAuthModalProps) => (
   <CommonModal isOpen={isOpen} onClose={onClose} title="">
     <div className={styles.content}>
-        <LoginForm/>
+        {/* <LoginForm/> */}
     </div>
   </CommonModal>
 );

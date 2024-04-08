@@ -32,14 +32,27 @@ const StudentsTable = ({
         return 'Неизвестно';
     }
   };
+  const getColorForState = (state: number) => {
+    switch (state) {
+        case 1:
+            return "green";
+        case 2:
+            return "yellow";
+        case 3:
+            return "pink";
+        default:
+            return "black"; // Default color if state doesn't match any specific case
+    }
+  } 
 
   return (
     <div className={styles.wrapper}>
       <CommonTable>
         <CommonTable.Header className={styles.row}>
           <CommonTable.Cell>ID</CommonTable.Cell>
-          <CommonTable.Cell>Имя</CommonTable.Cell>
           <CommonTable.Cell>Фамилия</CommonTable.Cell>
+          <CommonTable.Cell>Имя</CommonTable.Cell>
+          <CommonTable.Cell>Класс</CommonTable.Cell>
           <CommonTable.Cell>Состояние</CommonTable.Cell>
           <CommonTable.Cell>Причина ухода</CommonTable.Cell>
           <CommonTable.Cell>Дата регистрации</CommonTable.Cell>
@@ -54,10 +67,11 @@ const StudentsTable = ({
           students.map((student) => (
             <CommonTable.Row key={student.id} className={styles.row}>
               <CommonTable.IdCell id={student.id} />
-              <CommonTable.Cell>{student.name}</CommonTable.Cell>
-              <CommonTable.Cell>{student.surname}</CommonTable.Cell>
+              <CommonTable.Cell className={styles.surname}>{student.surname}</CommonTable.Cell>
+              <CommonTable.Cell className={styles.name}>{student.name}</CommonTable.Cell>
+              <CommonTable.Cell>{student.grade}</CommonTable.Cell>
               <CommonTable.Cell>
-                <Tag color="pink">{getStateLabel(student.state)}</Tag>
+                <Tag color={getColorForState(student.state)}>{getStateLabel(student.state)}</Tag>
               </CommonTable.Cell>
               <CommonTable.Cell>{student.description}</CommonTable.Cell>
               <CommonTable.DateTimeCell>
