@@ -131,8 +131,7 @@ const ListStudentsView = () => {
   };
   return (
     <div className={styles.wrapper}>
-      <CommonPageTitle>Статистика (мед пункт)</CommonPageTitle>
-      
+
       <div className={styles.controls}>
         <Button
           icon={<PlusCircleOutlined />}
@@ -144,18 +143,21 @@ const ListStudentsView = () => {
       </div>
       <GeneralMetricsGrid />
 
-      <Select
-        defaultValue="11G"
-        className={styles.select}
-        style={{ width: 120 }}
-        onChange={handleChange}
-        options={[
-          { value: '11G', label: '11G' },
-          { value: '9C', label: '9C' },
-          { value: '7E', label: '7E' },
-  
-        ]}
-      />
+      <div>
+        <Select
+          defaultValue="11G"
+          className={styles.select}
+          style={{ width: 120 }}
+          onChange={handleChange}
+          options={[
+            { value: '11G', label: '11G' },
+            { value: '9C', label: '9C' },
+            { value: '7E', label: '7E' },
+    
+          ]}
+        />
+        <span className={styles.class}>*выберите класс</span>
+      </div>
 
       <div className={styles.content}>
         <StudentsTable

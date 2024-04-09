@@ -35,11 +35,11 @@ const StudentsTable = ({
   const getColorForState = (state: number) => {
     switch (state) {
         case 1:
-            return "green";
+            return "cyan";
         case 2:
-            return "yellow";
+            return "geekblue";
         case 3:
-            return "pink";
+            return "red";
         default:
             return "black"; // Default color if state doesn't match any specific case
     }

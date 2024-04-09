@@ -1,4 +1,5 @@
 import App from "@/App"
+import AuthGuardLayout from "@/common/layouts/auth-guard-layout"
 import { HeaderLayout } from "@/common/layouts/header-layout"
 import ModalLayout from "@/common/layouts/modal-layout"
 import NavigationLayout from "@/common/layouts/navigation-layout"
@@ -27,12 +28,18 @@ export const routes: RouteObject[] = [
 				],
 			},
 			{
-				element: <NavigationLayout/>,
+				element: <AuthGuardLayout/>,
 				path: "/",
-				children:[
+				children: [
 					{
-						element: <ListStudentsView />,
-						path: "/medblock",
+						element: <NavigationLayout/>,
+						path: "/",
+						children:[
+							{
+								element: <ListStudentsView />,
+								path: "/medblock",
+							}
+						]
 					}
 				]
 			},

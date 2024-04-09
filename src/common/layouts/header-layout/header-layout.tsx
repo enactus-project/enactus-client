@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Header } from './components/header';
 import styles from './header-layout.module.css';
 import { useAppSelector } from '@/store';
@@ -7,9 +7,9 @@ import { useAppDispatch } from '@/store';
 import { useDispatch } from 'react-redux';
 
 export const HeaderLayout = (() => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const user = useAppSelector(selectUser);
-
+  const navigate = useNavigate()
   const handleLogout = () => {
     dispatch(unsetAuth());
     dispatch(unsetUser());

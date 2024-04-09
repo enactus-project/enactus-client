@@ -5,33 +5,33 @@ const SideBar = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logoWrapper}>
-        <img src="/vite.svg" alt="Logo" className={styles.logo} />
+        <img src="/tirek-logo.png" alt="Logo" className={styles.logo} />
       </div>
       <nav className={styles.links}>
         <div className={styles.linkWrapper}>
           <SideBarLink
-            to="/platform"
-            icon="/chart-square.svg"
-            label="Аналитика"
+            to="/medblock"
+            icon="bx bxs-dashboard"
+            label="Панель"
           />
         </div>
         <div className={styles.linkWrapper}>
           <SideBarLink
             to="/"
-            icon="/chart-square.svg"
-            label="Пользователи"
+            icon="bx bx-search-alt-2"
+            label="Поиск"
           />
         </div>
         <div className={styles.linkWrapper}>
           <SideBarLink
             to="/"
-            icon="/chart-square.svg"
-            label="Контент"
+            icon="bx bx-info-circle"
+            label="Документация"
           />
         </div>
-        <div className={styles.linkWrapper}>
+        {/* <div className={styles.linkWrapper}>
           <SideBarLink to="/" icon="/chart-square.svg" label="Админы" />
-        </div>
+        </div> */}
       </nav>
     </div>
   );

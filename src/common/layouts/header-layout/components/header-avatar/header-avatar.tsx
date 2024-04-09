@@ -25,7 +25,7 @@ export const HeaderAvatar = ({ user, onLogout }: HeaderAvatarProps) => {
         />
         <div className={styles.textContainer}>
           <span className={styles.name}>{user?.name || 'Не указано'}</span>
-          <span className={styles.email}>{user?.email}</span>
+          <span className={styles.email}>{user?.email}</span> 
         </div>
       </div>
       </Dropdown>) :

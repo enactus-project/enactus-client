@@ -14,10 +14,10 @@
   margin-bottom: 20px;
 }
 
-
 .content{
   margin-top: 20px;
 }
+
 .subjectsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -28,6 +28,14 @@
 .select{
   margin-top: 20px;
 }
+
+.class{
+  font-style: italic;
+  color: rgb(138, 138, 138);
+  font-size: 12px;
+  margin-left: 5px;
+}
+
 @media all and (max-width: 1300px) {
   .subjectsGrid {
     grid-template-columns: repeat(3, 1fr);
