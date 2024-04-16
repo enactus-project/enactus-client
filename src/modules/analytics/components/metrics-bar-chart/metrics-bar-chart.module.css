@@ -1,0 +1,18 @@
+.wrapper {
+  padding: 20px 30px 24px;
+  background-color: var(--box-color);
+  border-radius: 14px;
+}
+
+.title {
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+
+.content {
+  height: 260px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

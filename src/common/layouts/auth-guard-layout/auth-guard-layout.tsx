@@ -6,7 +6,6 @@ import { useMessage } from '@/common/hooks/use-message';
 
 const AuthGuardLayout = () => {
   const navigate = useNavigate();
-  const message = useMessage();
   const auth = useAppSelector(selectAuth);
   const user = useAppSelector(selectUser);
 
@@ -15,8 +14,6 @@ const AuthGuardLayout = () => {
       navigate('/', {
         replace: true,
       });
-
-      message.info('Необходимо войти');
     }
   }, [auth, user]);
 
