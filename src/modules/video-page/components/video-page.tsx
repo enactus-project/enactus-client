@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react"
-import styles from "./video-page.module.css" // Import CSS module for styles
+import styles from "./video-page.module.css"
 import { Tag } from "antd"
-interface FAQItem {
+interface VideoItem {
 	id: number
 	location: string
 	videoUrl: string
@@ -9,7 +9,7 @@ interface FAQItem {
 	mood: number
 }
 
-const faqData: FAQItem[] = [
+const videoData: VideoItem[] = [
 	{
 		id: 1,
 		location: "hb-1",
@@ -33,7 +33,7 @@ const faqData: FAQItem[] = [
 	},
 ]
 
-const FAQTable: React.FC = () => {
+const VideoPage: React.FC = () => {
 	const [expandedId, setExpandedId] = useState<number | null>(null)
 
 	const videoRef = useRef<HTMLIFrameElement>(null)
@@ -92,7 +92,7 @@ const FAQTable: React.FC = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{faqData.map((item) => (
+					{videoData.map((item) => (
 						<React.Fragment key={item.id}>
 							<tr
 								className={`${styles["faq-row"]} ${
@@ -138,4 +138,4 @@ const FAQTable: React.FC = () => {
 	)
 }
 
-export default FAQTable
+export default VideoPage
