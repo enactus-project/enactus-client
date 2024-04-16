@@ -27,7 +27,7 @@ const MedicalAnalysisTable = ({
 			daytime: "Утро",
 			description: "Повышенная температура",
 			drugs: "Парацетамол",
-			isAbsent: false,
+			isAbsent: true,
 			updatedAt: "2023-12-06",
 		},
 		{
@@ -37,7 +37,7 @@ const MedicalAnalysisTable = ({
 			daytime: "Обед",
 			description: "Головная боль",
 			drugs: "Нурофен",
-			isAbsent: true,
+			isAbsent: false,
 			updatedAt: "2024-02-04",
 		},
 		{
@@ -47,7 +47,7 @@ const MedicalAnalysisTable = ({
 			daytime: "Утро",
 			description: "Головная боль",
 			drugs: "Ибупрофен",
-			isAbsent: true,
+			isAbsent: false,
 			updatedAt: "2024-03-02",
 		},
 		{
@@ -71,7 +71,7 @@ const MedicalAnalysisTable = ({
 					<CommonTable.Cell>Время дня</CommonTable.Cell>
 					<CommonTable.Cell>Описание</CommonTable.Cell>
 					<CommonTable.Cell>Медикаменты</CommonTable.Cell>
-					<CommonTable.Cell>Присутствие</CommonTable.Cell>
+					<CommonTable.Cell>Ушел домой</CommonTable.Cell>
 					<CommonTable.Cell>Последнее обновление</CommonTable.Cell>
 				</CommonTable.Header>
 				{isLoading && <CommonTable.LoadingIndicator />}
@@ -85,7 +85,17 @@ const MedicalAnalysisTable = ({
 							<CommonTable.Cell>{med.daytime}</CommonTable.Cell>
 							<CommonTable.Cell>{med.description || ""}</CommonTable.Cell>
 							<CommonTable.Cell>{med.drugs || ""}</CommonTable.Cell>
-							<CommonTable.Cell>{med.isAbsent ? "Да" : "Нет"}</CommonTable.Cell>
+							<CommonTable.Cell>
+								{med.isAbsent ? (
+									<Tag color="green" shape="square">
+										Да
+									</Tag>
+								) : (
+									<Tag color="red" shape="square">
+										Нет
+									</Tag>
+								)}
+							</CommonTable.Cell>
 							<CommonTable.Cell>{med.updatedAt}</CommonTable.Cell>
 						</CommonTable.Row>
 					))}

@@ -1,25 +1,36 @@
 import React, { useState, useRef } from "react"
 import styles from "./video-page.module.css" // Import CSS module for styles
-
+import { Tag } from "antd"
 interface FAQItem {
 	id: number
 	location: string
-	answer: string
 	videoUrl: string
-	isSuspicious: boolean // New property
-	mood: string // New property
+	isSuspicious: boolean
+	mood: number
 }
 
 const faqData: FAQItem[] = [
 	{
 		id: 1,
 		location: "hb-1",
-		answer: "student acted suspicious",
-		videoUrl: "https://www.youtube.com/embed/MtB4UdxFspE",
-		isSuspicious: true, // Example value
-		mood: "Happy", // Example value
+		videoUrl: "https://www.youtube.com/embed/H4gbVsnQD6w",
+		isSuspicious: true,
+		mood: 4,
 	},
-	// Add more FAQ items as needed
+	{
+		id: 2,
+		location: "fm-3",
+		videoUrl: "https://www.youtube.com/embed/H4gbVsnQD6w",
+		isSuspicious: false,
+		mood: 2,
+	},
+	{
+		id: 3,
+		location: "t-3",
+		videoUrl: "https://www.youtube.com/embed/H4gbVsnQD6w",
+		isSuspicious: false,
+		mood: 1,
+	},
 ]
 
 const FAQTable: React.FC = () => {
@@ -31,15 +42,53 @@ const FAQTable: React.FC = () => {
 		setExpandedId(id === expandedId ? null : id)
 	}
 
+	const getMoodColor = (mood: number) => {
+		switch (mood) {
+			case 1:
+				return "green"
+			case 2:
+				return "blue"
+			case 3:
+				return "yellow"
+			case 4:
+				return "red"
+			default:
+				return "gray"
+		}
+	}
+
+	const getMoodText = (mood: number) => {
+		switch (mood) {
+			case 1:
+				return "Счастливый"
+			case 2:
+				return "Нейтральный"
+			case 3:
+				return "Грустный"
+			case 4:
+				return "Злой"
+			default:
+				return "Неизвестно"
+		}
+	}
+
+	const susColor = (isSuspicious: boolean) => {
+		if (isSuspicious) {
+			return "red"
+		} else if (!isSuspicious) {
+			return "green"
+		}
+	}
+
 	return (
 		<div className={styles["faq-table-container"]}>
 			<table className={styles["faq-table"]}>
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Location</th>
-						<th>Is Suspicious</th>
-						<th>Mood</th>
+						<th>Расположение</th>
+						<th>Подозрительные действия</th>
+						<th>Настроение</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -53,22 +102,28 @@ const FAQTable: React.FC = () => {
 							>
 								<td>{item.id}</td>
 								<td>{item.location}</td>
-								<td>{item.isSuspicious ? "Yes" : "No"}</td>
-								<td>{item.mood}</td>
+								<td>
+									<Tag color={susColor(item.isSuspicious)}>
+										{item.isSuspicious ? "Да" : "Нет"}
+									</Tag>
+								</td>
+								<td>
+									<Tag color={getMoodColor(item.mood)} shape="square">
+										{getMoodText(item.mood)}
+									</Tag>
+								</td>
 							</tr>
 							{expandedId === item.id && (
 								<tr>
 									<td colSpan={4}>
 										<div className={styles["faq-expanded-content"]}>
-											<p>{item.answer}</p>
 											<div className={styles["faq-video-container"]}>
 												<iframe
 													ref={videoRef}
 													title={`Video ${item.id}`}
 													src={item.videoUrl}
-													frameBorder="0"
 													allowFullScreen
-													style={{ width: "100%" }} // Set width to 100%
+													style={{ width: "100%" }}
 												></iframe>
 											</div>
 										</div>
