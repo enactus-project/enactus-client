@@ -1,9 +1,8 @@
 import { Tag } from "antd"
-
 import { PaginationMeta } from "@/common/entities"
 import { Student } from "@/common/entities/student"
 import CommonTable from "@/common/components/common-table"
-import styles from "./students-table.module.css"
+import styles from "./curator-table.module.css"
 
 interface Props {
 	students?: Student[]
@@ -13,35 +12,40 @@ interface Props {
 	onPageChange?: (page: number) => void
 }
 
-const StudentsTable = ({
+const CuratorStudentsTable = ({
 	students = [],
 	isLoading = false,
 	hasError = false,
 	paginationMeta,
 	onPageChange = () => ({}),
 }: Props) => {
-	const getStateLabel = (role: number) => {
-		switch (role) {
+	const getStateLabelPerformance = (performance: number) => {
+		switch (performance) {
 			case 1:
-				return "Хороший"
+				return { label: "Отличная", color: "green" }
 			case 2:
-				return "Средний"
+				return { label: "Хорошая", color: "lime" }
 			case 3:
-				return "Сложный"
+				return { label: "Удовлетворительная", color: "yellow" }
+			case 4:
+				return { label: "Ниже среднего", color: "orange" }
+			case 5:
+				return { label: "Плохая", color: "red" }
 			default:
-				return "Неизвестно"
+				return { label: "-" }
 		}
 	}
+
 	const getColorForState = (state: number) => {
 		switch (state) {
 			case 1:
-				return "cyan"
+				return { label: "Хороший", color: "cyan" }
 			case 2:
-				return "geekblue"
+				return { label: "Средний", color: "geekblue" }
 			case 3:
-				return "red"
+				return { label: "Сложный", color: "red" }
 			default:
-				return "black" // Default color if state doesn't match any specific case
+				return { label: "-" }
 		}
 	}
 
@@ -54,7 +58,7 @@ const StudentsTable = ({
 					<CommonTable.Cell>Имя</CommonTable.Cell>
 					<CommonTable.Cell>Класс</CommonTable.Cell>
 					<CommonTable.Cell>Состояние</CommonTable.Cell>
-					<CommonTable.Cell>Причина ухода</CommonTable.Cell>
+					<CommonTable.Cell>Успеваемость</CommonTable.Cell>
 					<CommonTable.Cell>Дата регистрации</CommonTable.Cell>
 				</CommonTable.Header>
 				{isLoading && <CommonTable.LoadingIndicator />}
@@ -75,11 +79,19 @@ const StudentsTable = ({
 							</CommonTable.Cell>
 							<CommonTable.Cell>{student.grade}</CommonTable.Cell>
 							<CommonTable.Cell>
-								<Tag color={getColorForState(student.state)}>
-									{getStateLabel(student.state)}
+								<Tag color={getColorForState(student.state).color}>
+									{getColorForState(student.state).label}
 								</Tag>
 							</CommonTable.Cell>
-							<CommonTable.Cell>{student.description}</CommonTable.Cell>
+
+							<CommonTable.Cell>
+								<Tag
+									color={getStateLabelPerformance(student.performance).color}
+								>
+									{getStateLabelPerformance(student.performance).label}
+								</Tag>
+							</CommonTable.Cell>
+
 							<CommonTable.DateTimeCell>
 								{student.created_at}
 							</CommonTable.DateTimeCell>
@@ -96,4 +108,4 @@ const StudentsTable = ({
 	)
 }
 
-export default StudentsTable
+export default CuratorStudentsTable
