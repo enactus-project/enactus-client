@@ -1,24 +1,15 @@
-export interface Health {
-	id: string
-	studentId: string | null
-	daytime: string
-	student_mood: string | null
-	student_action: string | null
-	student_overall: number | null
-	kundelik_overall: number | null
-	overall: number | null
-	createdAt: string
-	updatedAt: string
-	deletedAt: string | null
-}
-
-export interface HealthData {
-	studentId: string | null
-	daytime: string
-	student_mood: string | null
-	student_action: string | null
-	student_overall: number | null
-	kundelik_overall: number | null
-	createdAt: string
-	overall: number | null
+export class Health {
+	constructor(
+		public id: string,
+		public studentId: string | null,
+		public daytime: string,
+		public student_mood: string | null,
+		public student_action: string | null,
+		public student_overall: number | null,
+		public kundelik_overall: number | null,
+		public overall: number | null,
+		public createdAt: string,
+		public updatedAt: string,
+		public deletedAt: string | null
+	) {}
 }

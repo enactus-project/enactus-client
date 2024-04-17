@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './common-back-button.module.css'
+import styles from './common-back-button.module.css';
 
 interface Props {
   to: string;
@@ -9,9 +9,9 @@ interface Props {
 const CommonBackButton = ({ to, text }: Props) => {
   return (
     <div className={styles.wrapper}>
-      <Link to={to} className={styles.link}>
+      <Link to={to}>
         <img
-          src="/arrow-left.svg"
+          src="/icons/arrow-left.svg"
           alt="Arrow Left"
           className={styles.icon}
         />

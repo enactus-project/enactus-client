@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   align-items: center;
-  margin: 25px;
 }
 
 .icon {
@@ -11,9 +10,4 @@
 
 .text {
   font-size: 14px;
-}
-
-.link{
-  display: flex;
-  align-items: center;
 }
