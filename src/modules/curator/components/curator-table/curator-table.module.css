@@ -5,8 +5,8 @@
 }
 
 .row {
-	grid-template-columns: 100px repeat(6, 1fr);
-	gap: 40px;
+	grid-template-columns: 140px repeat(6, 1.4fr);
+	gap: 80px;
 }
 
 .name,

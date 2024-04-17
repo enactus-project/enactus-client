@@ -1,27 +1,27 @@
-import { useEffect } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { useAppSelector } from '@/store';
-import { selectUser, selectAuth } from '@/store/slices/auth-slice';
-import { useMessage } from '@/common/hooks/use-message';
+import { useEffect } from "react"
+import { Outlet, useNavigate } from "react-router-dom"
+import { useAppSelector } from "@/store"
+import { selectUser, selectAuth } from "@/store/slices/auth-slice"
 
 const AuthGuardLayout = () => {
-  const navigate = useNavigate();
-  const auth = useAppSelector(selectAuth);
-  const user = useAppSelector(selectUser);
+	const navigate = useNavigate()
 
-  useEffect(() => {
-    if (!auth || !user) {
-      navigate('/', {
-        replace: true,
-      });
-    }
-  }, [auth, user]);
+	const auth = useAppSelector(selectAuth)
+	const user = useAppSelector(selectUser)
 
-  return (
-    <>
-      <Outlet />
-    </>
-  );
-};
+	useEffect(() => {
+		if (!auth || !user) {
+			navigate("/", {
+				replace: true,
+			})
+		}
+	}, [auth, user])
 
-export default AuthGuardLayout;
+	return (
+		<>
+			<Outlet />
+		</>
+	)
+}
+
+export default AuthGuardLayout

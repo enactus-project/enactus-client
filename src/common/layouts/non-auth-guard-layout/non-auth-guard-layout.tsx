@@ -10,7 +10,6 @@ const NonAuthGuardLayout = () => {
 
   useEffect(() => {
     if (auth && admin) {
-      // check the role of user to navigate to special pages
       navigate('/medblock', {
         replace: true,
       });

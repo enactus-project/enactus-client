@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react"
 import { useUnauthorizedHandler } from "@/common/api/hooks/use-unauthorized-handler"
 import { Student } from "@/common/entities/student"
-import styles from "./list-students-view.module.css"
-import { StudentsRepository } from "../../data/student.repository"
+import styles from "./curator-view.module.css"
+import { StudentsRepository } from "@/modules/students/data/student.repository"
 import { Button, Select, message } from "antd"
-import StudentsTable from "../../components/students-table"
+import CuratorStudentsTable from "../components/curator-table/curator-table"
 import { PaginationMeta } from "@/common/entities/pagination-meta"
-import EditDescriptionModal from "../../components/edit-description-modal"
+import EditDescriptionModal from "@/modules/students/components/edit-description-modal"
 import { PlusCircleOutlined } from "@ant-design/icons"
 import GeneralMetricsGrid from "@/modules/analytics/components/general-metrics-grid"
-
-const ListStudentsView = () => {
+const CuratorCabinet = () => {
 	const unauthorizedHandler = useUnauthorizedHandler()
 
 	const [students, setStudents] = useState<Student[]>([])
@@ -74,15 +73,12 @@ const ListStudentsView = () => {
 		setIsCreateStudentModalVisible(false)
 	}
 
-	const handleDescriptionEditClick = () => {
-		setIsEditDescriptionModalVisible(true)
-	}
-
 	const handleEditTopicModalSubmit = async (payload: {
 		name: string
 		surname: string
 		state: number
 		description: string
+		performance: number
 	}) => {
 		setIsEditDescriptionModalSubmitLoading(true)
 		message.loading({ content: "Изменяем" })
@@ -94,6 +90,7 @@ const ListStudentsView = () => {
 					surname: payload.surname,
 					description: payload.description,
 					state: payload.state,
+					performance: payload.performance,
 				})
 			)
 
@@ -135,7 +132,7 @@ const ListStudentsView = () => {
 	}
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.controls}>
+			{/* <div className={styles.controls}>
 				<Button
 					icon={<PlusCircleOutlined />}
 					type="primary"
@@ -143,7 +140,7 @@ const ListStudentsView = () => {
 				>
 					Добавить
 				</Button>
-			</div>
+			</div> */}
 			<GeneralMetricsGrid />
 
 			<div>
@@ -162,7 +159,7 @@ const ListStudentsView = () => {
 			</div>
 
 			<div className={styles.content}>
-				<StudentsTable
+				<CuratorStudentsTable
 					students={students}
 					paginationMeta={paginationMeta}
 					isLoading={isLoading}
@@ -196,5 +193,4 @@ const ListStudentsView = () => {
 		</div>
 	)
 }
-
-export default ListStudentsView
+export default CuratorCabinet
