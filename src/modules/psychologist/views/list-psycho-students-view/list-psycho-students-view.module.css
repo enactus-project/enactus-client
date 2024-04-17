@@ -1,0 +1,44 @@
+.wrapper {
+    padding: 30px 30px 60px;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section:last-child {
+    margin-bottom: 0;
+  }
+  
+  .controls{
+    margin-bottom: 20px;
+  }
+  
+  .content{
+    margin-top: 20px;
+  }
+  
+  .subjectsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+    row-gap: 12px;
+  }
+  
+  .select{
+    margin-top: 20px;
+  }
+  
+  .class{
+    font-style: italic;
+    color: rgb(138, 138, 138);
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  @media all and (max-width: 1300px) {
+    .subjectsGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
