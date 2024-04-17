@@ -13,7 +13,6 @@ interface Props {
 }
 
 const StudentTable = ({
-  student,
   isLoading = false,
   hasError = false,
   paginationMeta,
