@@ -1,0 +1,14 @@
+.wrapper {
+    padding: 20px;
+    background-color: var(--box-color);
+    border-radius: 10px;
+  }
+  
+  .row {
+    grid-template-columns: 140px repeat(6, 1.4fr);
+    gap: 80px;
+  }
+  
+  .name, .surname{
+    font-weight: 600;
+  }

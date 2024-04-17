@@ -1,11 +1,15 @@
 import App from "@/App"
 import AuthGuardLayout from "@/common/layouts/auth-guard-layout"
+import { HeaderLayout } from "@/common/layouts/header-layout"
 import ModalLayout from "@/common/layouts/modal-layout"
 import NavigationLayout from "@/common/layouts/navigation-layout"
 import NonAuthGuardLayout from "@/common/layouts/non-auth-guard-layout"
+import ListPsychoStudentsView from "@/modules/psychologist/views/list-psycho-students-view"
 import LoginView from "@/modules/auth/view/login-view"
-import CuratorCabinet from "@/modules/curator/curator-view"
-import DocumentationView from "@/modules/documentation/views/index"
+import LoginForm from "@/modules/auth/view/login-view/components/login-form"
+
+import { MainBanner } from "@/modules/lending/components/main-banner/main-banner"
+import ListStudentView from "@/modules/student/views/list-student-view/list-student-view"
 import ListStudentsView from "@/modules/students/views/list-subjects-view"
 import { RouteObject } from "react-router-dom"
 
@@ -37,12 +41,12 @@ export const routes: RouteObject[] = [
 								path: "/medblock",
 							},
 							{
-								element: <DocumentationView />,
-								path: "/documentation",
+								element: <ListPsychoStudentsView />,
+								path: "/psychologist",
 							},
 							{
-								element: <CuratorCabinet />,
-								path: "/curator",
+								element: <ListStudentView />,
+								path: "/students/:studentId",
 							},
 						],
 					},

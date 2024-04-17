@@ -1,0 +1,56 @@
+.faq-table-container {
+	margin: 20px;
+	background-color: white;
+}
+
+.faq-table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+}
+
+.faq-table th,
+.faq-table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+.faq-row {
+	cursor: pointer;
+}
+
+.faq-row:hover {
+	background-color: #f0f0f0;
+}
+
+.faq-row.expanded {
+	background-color: #f9f9f9;
+}
+
+.faq-expanded-content {
+	padding: 10px;
+}
+
+.faq-expanded-content p {
+	margin-bottom: 10px;
+}
+
+.faq-video-container {
+	position: relative;
+	width: 100%;
+
+	padding-bottom: 56.25%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.faq-video-container iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
