@@ -14,6 +14,7 @@ interface FormData {
 const LoginForm = ({ submitLoading = false, onSubmit = () => ({}) }: Props) => {
   return (
     <Form layout="vertical" className={styles.wrapper} onFinish={onSubmit}>
+ 
       <h3 className={styles.title}>Вход</h3>
       <Form.Item
         label="Почта"

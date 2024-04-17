@@ -34,6 +34,14 @@ export class StudentsRepository {
 		]
 	}
 
+    async getStudentById(studentId?: string): Promise<Student>{
+      const response = await request.get(`v1/students/${studentId}`)
+
+      const student = response.data
+
+      return student
+    }
+
 	async updateStudentById(
 		studentId: string,
 		payload: {

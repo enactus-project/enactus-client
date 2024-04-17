@@ -4,18 +4,17 @@ import { useAppSelector } from "@/store"
 import { selectUser, selectAuth } from "@/store/slices/auth-slice"
 
 const AuthGuardLayout = () => {
-	const navigate = useNavigate()
+  const navigate = useNavigate();
+  const auth = useAppSelector(selectAuth);
+  const user = useAppSelector(selectUser);
 
-	const auth = useAppSelector(selectAuth)
-	const user = useAppSelector(selectUser)
-
-	useEffect(() => {
-		if (!auth || !user) {
-			navigate("/", {
-				replace: true,
-			})
-		}
-	}, [auth, user])
+  useEffect(() => {
+    if (!auth || !user) {
+      navigate('/', {
+        replace: true,
+      });
+    }
+  }, [auth, user]);
 
 	return (
 		<>
