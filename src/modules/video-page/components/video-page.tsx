@@ -12,15 +12,15 @@ interface VideoItem {
 const videoData: VideoItem[] = [
 	{
 		id: 1,
-		location: "hb-1",
-		videoUrl: "https://www.youtube.com/embed/H4gbVsnQD6w",
+		location: "1-etaj",
+		videoUrl: "https://diplomka-s3-db.s3.eu-west-3.amazonaws.com/video2.mp4",
 		isSuspicious: true,
 		mood: 4,
 	},
 	{
 		id: 2,
-		location: "fm-3",
-		videoUrl: "https://www.youtube.com/embed/H4gbVsnQD6w",
+		location: "1-etaj",
+		videoUrl: "https://diplomka-s3-db.s3.eu-west-3.amazonaws.com/video1.mp4",
 		isSuspicious: false,
 		mood: 2,
 	},
@@ -108,7 +108,7 @@ const VideoPage: React.FC = () => {
 									</Tag>
 								</td>
 								<td>
-									<Tag color={getMoodColor(item.mood)} shape="square">
+									<Tag color={getMoodColor(item.mood)}>
 										{getMoodText(item.mood)}
 									</Tag>
 								</td>

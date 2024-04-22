@@ -23,28 +23,28 @@ const MedicalAnalysisTable = ({
 		{
 			id: "1",
 			student_id: "47dee995-aafb-4177-b6eb-5940086cb446",
-			nurse_id: "002",
-			daytime: "Утро",
+			nurse_id: "4177-b6eb-5940086cb446",
+			daytime: "12:12",
 			description: "Повышенная температура",
 			drugs: "Парацетамол",
 			isAbsent: true,
-			updatedAt: "2023-12-06",
+			updatedAt: "2023-04-06",
 		},
 		{
 			id: "2",
 			student_id: "47dee995-aafb-4177-b6eb-5940086cb446",
-			nurse_id: "003",
-			daytime: "Обед",
+			nurse_id: "f8c3-3b19-4c752b4a80ea",
+			daytime: "13:02",
 			description: "Головная боль",
 			drugs: "Нурофен",
 			isAbsent: false,
-			updatedAt: "2024-02-04",
+			updatedAt: "2024-03-21",
 		},
 		{
 			id: "3",
 			student_id: "47dee995-aafb-4177-b6eb-5940086cb446",
-			nurse_id: "002",
-			daytime: "Утро",
+			nurse_id: "d2fa-8a72-13184e4fcd5d",
+			daytime: "9:51",
 			description: "Головная боль",
 			drugs: "Ибупрофен",
 			isAbsent: false,
@@ -53,12 +53,12 @@ const MedicalAnalysisTable = ({
 		{
 			id: "4",
 			student_id: "47dee995-aafb-4177-b6eb-5940086cb446",
-			nurse_id: "001",
-			daytime: "Вечер",
+			nurse_id: "b0bc-9e23-9255be1a6bfa",
+			daytime: "14:20",
 			description: "Пищевое отравление",
 			drugs: "Активированный Уголь",
 			isAbsent: true,
-			updatedAt: "2024-04-16",
+			updatedAt: "2024-02-26",
 		},
 	]
 
@@ -72,7 +72,7 @@ const MedicalAnalysisTable = ({
 					<CommonTable.Cell>Описание</CommonTable.Cell>
 					<CommonTable.Cell>Медикаменты</CommonTable.Cell>
 					<CommonTable.Cell>Ушел домой</CommonTable.Cell>
-					<CommonTable.Cell>Последнее обновление</CommonTable.Cell>
+					<CommonTable.Cell>Дата</CommonTable.Cell>
 				</CommonTable.Header>
 				{isLoading && <CommonTable.LoadingIndicator />}
 				{!isLoading && hasError && <CommonTable.ErrorPlaceholder />}

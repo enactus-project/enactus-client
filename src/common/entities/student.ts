@@ -1,23 +1,25 @@
+// export interface Student {
+// 	id: string
+// 	name: string | null
+// 	surname: string
+// 	state: number
+// 	grade: string
+// 	description: string
+// 	performance: number
+// 	created_at: string
+// 	updatedAt: string
+// 	deletedAt: string | null
+// }
 export interface Student {
     id: string;
-    name: string | null;
+    name?: string;
     surname: string;
     state: number;
-    academic?: number;
-    is_absent?: boolean;
-    date?: string;
-    grade: string;
-    description: string;
-    created_at: string;
+    iin: string;
+    vk?: string; // Optional fields
+    insta?: string;
+    tiktok?: string;
+    createdAt: string;
     updatedAt: string;
     deletedAt: string | null;
 }
-
-export interface StudentData{
-    studentId: string
-    academic?: number;
-    is_absent?: boolean;
-    date: string;
-    grade: string; reason_for_absent?: string 
-}
-  

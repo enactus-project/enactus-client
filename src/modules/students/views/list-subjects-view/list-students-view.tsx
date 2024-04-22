@@ -38,6 +38,7 @@ const ListStudentsView = () => {
   
   useEffect(() => {
     loadStudents();
+    console.log(students, "FROM LIST")
   }, []);
   
 
@@ -51,6 +52,7 @@ const ListStudentsView = () => {
         studentsRepository.getStudents({ page }),
       );
       setStudents(fetchedStudents);
+      console.log(students, "FROM LIST")
       setPaginationMeta(fetchedPaginationMeta);
     } catch {
       setHasError(true);
@@ -181,7 +183,7 @@ const ListStudentsView = () => {
           name: editingDescription?.name ?? '',
           surname: editingDescription?.surname ?? '',
           state: editingDescription?.state ?? 1,
-          description: editingDescription?.description ?? '',
+          description: editingDescription?.surname ?? '',
         }}
         title="Редактирование темы"
         visible={isEditDescriptionModalVisible}

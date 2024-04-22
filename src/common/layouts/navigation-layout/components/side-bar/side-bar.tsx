@@ -24,7 +24,7 @@ const SideBar = () => {
         </div>
         <div className={styles.linkWrapper}>
           <SideBarLink
-            to="/"
+            to="/documentation"
             icon="bx bx-info-circle"
             label="Документация"
           />

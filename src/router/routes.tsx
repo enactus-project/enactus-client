@@ -11,6 +11,7 @@ import { MainBanner } from "@/modules/lending/components/main-banner/main-banner
 import ListStudentView from "@/modules/student/views/list-student-view/list-student-view"
 import ListStudentsView from "@/modules/students/views/list-subjects-view"
 import { RouteObject } from "react-router-dom"
+import DocumentationView from "@/modules/documentation/views"
 
 export const routes: RouteObject[] = [
 	{
@@ -48,8 +49,8 @@ export const routes: RouteObject[] = [
 								path: "/students/:studentId",
 							},
 							{
-								element: <ListStudentView/>,
-								path: "/students/:studentId"
+								element: <DocumentationView />,
+								path: "/documentation",
 							},
 							
 

@@ -6,10 +6,9 @@ export const mapStudentResponseToStudent = (
   id: payload.id,
   name: payload.name,
   surname: payload.surname,
-  grade: payload.grade,
+  iin: payload.iin,
   state: payload.state,
-  description: payload.description,
-  created_at: payload.created_at,
+  createdAt: payload.created_at,
   deletedAt: payload.deletedAt,
   updatedAt: payload.updatedAt
 });

@@ -44,6 +44,7 @@ const StudentsTable = ({
             return "black"; // Default color if state doesn't match any specific case
     }
   } 
+  console.log(students, "Students")
 
   return (
     <div className={styles.wrapper}>
@@ -54,8 +55,8 @@ const StudentsTable = ({
           <CommonTable.Cell>Имя</CommonTable.Cell>
           <CommonTable.Cell>Класс</CommonTable.Cell>
           <CommonTable.Cell>Состояние</CommonTable.Cell>
-          <CommonTable.Cell>Причина ухода</CommonTable.Cell>
-          <CommonTable.Cell>Дата регистрации</CommonTable.Cell>
+          <CommonTable.Cell>ИИН</CommonTable.Cell>
+          <CommonTable.Cell>Куратор</CommonTable.Cell>
         </CommonTable.Header>
         {isLoading && <CommonTable.LoadingIndicator />}
         {!isLoading && hasError && <CommonTable.ErrorPlaceholder />}
@@ -69,14 +70,14 @@ const StudentsTable = ({
               <CommonTable.IdCell id={student.id} link={student.id} />
               <CommonTable.Cell className={styles.surname}>{student.surname}</CommonTable.Cell>
               <CommonTable.Cell className={styles.name}>{student.name}</CommonTable.Cell>
-              <CommonTable.Cell>{student.grade}</CommonTable.Cell>
+              <CommonTable.Cell>{"11G"}</CommonTable.Cell>
               <CommonTable.Cell>
                 <Tag color={getColorForState(student.state)}>{getStateLabel(student.state)}</Tag>
               </CommonTable.Cell>
-              <CommonTable.Cell>{student.description}</CommonTable.Cell>
-              <CommonTable.DateTimeCell>
-                {student.created_at}
-              </CommonTable.DateTimeCell>
+              <CommonTable.Cell>{student.iin}</CommonTable.Cell>
+              <CommonTable.Cell>
+                {"Алиева Г.Б"}
+              </CommonTable.Cell>
             </CommonTable.Row>
           ))}
         {!isLoading && !hasError && paginationMeta && (
