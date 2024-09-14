@@ -6,7 +6,7 @@ interface Props {
 
 const CommonTableEmailCell = ({ email }: Props) => {
   return (
-    <CommonTableCellWithCopy value={email}>{email}</CommonTableCellWithCopy>
+    <CommonTableCellWithCopy link="/" value={email}>{email}</CommonTableCellWithCopy>
   );
 };
 

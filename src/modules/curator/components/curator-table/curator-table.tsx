@@ -66,43 +66,7 @@ const CuratorStudentsTable = ({
 				{!isLoading && !hasError && students.length === 0 && (
 					<CommonTable.EmptyPlaceholder />
 				)}
-				{!isLoading &&
-					!hasError &&
-					students.map((student) => (
-						<CommonTable.Row key={student.id} className={styles.row}>
-							<CommonTable.IdCell id={student.id} link={student.id}/>
-							<CommonTable.Cell className={styles.surname}>
-								{student.surname}
-							</CommonTable.Cell>
-							<CommonTable.Cell className={styles.name}>
-								{student.name}
-							</CommonTable.Cell>
-							<CommonTable.Cell>{student.grade}</CommonTable.Cell>
-							<CommonTable.Cell>
-								<Tag color={getColorForState(student.state).color}>
-									{getColorForState(student.state).label}
-								</Tag>
-							</CommonTable.Cell>
-
-							<CommonTable.Cell>
-								<Tag
-									color={getStateLabelPerformance(student.performance).color}
-								>
-									{getStateLabelPerformance(student.performance).label}
-								</Tag>
-							</CommonTable.Cell>
-
-							<CommonTable.DateTimeCell>
-								{student.created_at}
-							</CommonTable.DateTimeCell>
-						</CommonTable.Row>
-					))}
-				{!isLoading && !hasError && paginationMeta && (
-					<CommonTable.Pagination
-						paginationMeta={paginationMeta}
-						onPageChange={onPageChange}
-					/>
-				)}
+			
 			</CommonTable>
 		</div>
 	)

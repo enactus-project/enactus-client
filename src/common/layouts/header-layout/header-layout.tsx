@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Header } from './components/header';
 import styles from './header-layout.module.css';
 import { useAppSelector } from '@/store';
