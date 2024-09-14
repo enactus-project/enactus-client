@@ -24,7 +24,7 @@ interface FormDataSignIn {
   password: string
 }
 
-const LoginForm = ({ submitLoading = false, onSubmitSignIn = () => ({}), onSubmitSignUp =( ) => ({}) }: Props) => {
+const LoginForm = ({ submitLoading = false, onSubmitSignUp =( ) => ({}) }: Props) => {
   const [toggleState, setToggleState] = useState(1)
 
   const authRepository = new AuthRepository()

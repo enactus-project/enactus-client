@@ -1,6 +1,6 @@
 import { Tag } from 'antd';
 import { PaginationMeta } from '@/common/entities';
-import { Student, StudentData } from '@/common/entities/student';
+import { Student } from '@/common/entities/student';
 import CommonTable from '@/common/components/common-table';
 import styles from './student-table.module.css';
 
@@ -13,14 +13,13 @@ interface Props {
 }
 
 const StudentTable = ({
-  student,
   isLoading = false,
   hasError = false,
   paginationMeta,
   onPageChange = () => ({}),
 }: Props) => {
 
-  const demoStudents: StudentData[] = [
+  const demoStudents: any[] = [
     {
       studentId: '47dee995-aafb-4177-b6eb-5940086cb446',
       academic: 85,

@@ -17,7 +17,6 @@ interface Props {
 
 const CodeModal = ({
   title,
-  initialData,
   visible = false,
   submitLoading = false,
   submitText = 'Подтвердить',

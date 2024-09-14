@@ -1,7 +1,6 @@
 import { CommonModal } from '../common-modal';
 import styles from './common-auth-modal.module.css'
 import { CommonAuthModalProps } from './common-auth-modal.types';
-import LoginForm from '@/modules/auth/views/login-view/components/login-form';
 
 export const CommonAuthModal = ({
   isOpen = false,

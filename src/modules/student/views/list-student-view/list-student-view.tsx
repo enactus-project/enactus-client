@@ -29,14 +29,10 @@ const ListStudentView = () => {
 	const [student, setStudent] = useState<Student>(demoStudent)
 	const { studentId } = useParams()
 	const unauthorizedHandler = useUnauthorizedHandler()
-	const [isEditDescriptionModalSubmitLoading, setIsEditDescriptionModalSubmitLoading] =
-	useState<boolean>(false);
-	const [editingDescription, setEditingDescription] = useState<Student| null>(null);
-	const [isEditDescriptionModalVisible, setIsEditDescriptionModalVisible] =
 	  useState<boolean>(false);
 	const [isCodeModalVisible, setIsCodeModalVisible] =
 	  useState<boolean>(false);
-	const [isCreateStudentModalSubmitLoading, setIsCreateStudentModalSubmitLoading] =
+	const [isCreateStudentModalSubmitLoading] =
 	  useState<boolean>(false);
   
 	const handleCreateStudentModalClose = () => {
