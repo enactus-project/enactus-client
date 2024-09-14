@@ -43,25 +43,43 @@ const ListStudentsView = () => {
   
 
   
-  const loadStudents = async ({ page = 1 } = { page: 1 }) => {
+  // const loadStudents = async ({ page = 1 } = { page: 1 }) => {
+  //   setHasError(false);
+  //   setIsLoading(true);
+
+  //   try {
+  //     const [fetchedStudents, fetchedPaginationMeta] = await unauthorizedHandler(
+  //       studentsRepository.getStudents()
+  //     );
+  //     setStudents(fetchedStudents);
+  //     console.log(students, "FROM LIST")
+  //     setPaginationMeta(fetchedPaginationMeta);
+  //   } catch {
+  //     setHasError(true);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+  const loadStudents = async () => {
     setHasError(false);
     setIsLoading(true);
-
+  
     try {
-      const [fetchedStudents, fetchedPaginationMeta] = await unauthorizedHandler(
-        studentsRepository.getStudents({ page }),
+      const fetchedStudents = await unauthorizedHandler(
+        studentsRepository.getStudents()
       );
       setStudents(fetchedStudents);
-      console.log(students, "FROM LIST")
-      setPaginationMeta(fetchedPaginationMeta);
+      console.log(fetchedStudents, "FROM LIST"); // Update to log the fetched students
     } catch {
       setHasError(true);
     } finally {
       setIsLoading(false);
     }
   };
-  const handlePageChange = (page: number) => {
-    loadStudents({ page });
+
+  
+  const handlePageChange = () => {
+    loadStudents();
   };
 
   const handleEditTopicModalClose = () => {
@@ -81,31 +99,31 @@ const ListStudentsView = () => {
     setIsEditDescriptionModalVisible(true);
   };
  
-  const handleEditTopicModalSubmit = async (payload: {name: string, surname:string, state:number, description: string}) => {
+  // const handleEditTopicModalSubmit = async (payload: {name: string, surname:string, state:number, description: string}) => {
  
-    setIsEditDescriptionModalSubmitLoading(true);
-    message.loading({ content: 'Изменяем' });
+  //   setIsEditDescriptionModalSubmitLoading(true);
+  //   message.loading({ content: 'Изменяем' });
 
-    try {
-      await unauthorizedHandler(
-        studentsRepository.updateStudentById(editingDescription?.id ?? '', {
-          name: payload.name,
-          surname: payload.surname,
-          description: payload.description,
-          state: payload.state,
-        }),
-      );
+  //   try {
+  //     await unauthorizedHandler(
+  //       studentsRepository.updateStudentById(editingDescription?.id ?? '', {
+  //         name: payload.name,
+  //         surname: payload.surname,
+  //         description: payload.description,
+  //         state: payload.state,
+  //       }),
+  //     );
 
-      message.success({ content: 'Изменено' });
-      setEditingDescription(null);
-      setIsEditDescriptionModalSubmitLoading(false);
-      await loadStudents({ page: paginationMeta.page });
-    } catch {
-      message.error({ content: 'Ошибка' });
-    } finally {
-      setIsEditDescriptionModalSubmitLoading(false);
-    }
-  };
+  //     message.success({ content: 'Изменено' });
+  //     setEditingDescription(null);
+  //     setIsEditDescriptionModalSubmitLoading(false);
+  //     await loadStudents();
+  //   } catch {
+  //     message.error({ content: 'Ошибка' });
+  //   } finally {
+  //     setIsEditDescriptionModalSubmitLoading(false);
+  //   }
+  // };
   
 
   const handleCreateStudentModalSubmit = async (payload: {name: string, surname:string, state:number, description: string}) => {
@@ -178,7 +196,7 @@ const ListStudentsView = () => {
         onSubmit={handleCreateStudentModalSubmit}
         onCancel={handleCreateStudentModalClose}
       />
-      <EditDescriptionModal
+      {/* <EditDescriptionModal
         initialData={{
           name: editingDescription?.name ?? '',
           surname: editingDescription?.surname ?? '',
@@ -191,7 +209,7 @@ const ListStudentsView = () => {
         submitText="Изменить"
         onSubmit={handleEditTopicModalSubmit}
         onCancel={handleEditTopicModalClose}
-      />
+      /> */}
     </div>
   );
 };

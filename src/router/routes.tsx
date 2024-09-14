@@ -12,6 +12,8 @@ import ListStudentView from "@/modules/student/views/list-student-view/list-stud
 import ListStudentsView from "@/modules/students/views/list-subjects-view"
 import { RouteObject } from "react-router-dom"
 import DocumentationView from "@/modules/documentation/views"
+import ListBasicMoodsView from "@/modules/basicMoods/views/basic-moods"
+import ListDangerMoodsView from "@/modules/dangerMoods/views"
 
 export const routes: RouteObject[] = [
 	{
@@ -19,18 +21,6 @@ export const routes: RouteObject[] = [
 		element: <ModalLayout />,
 		children: [
 			{
-				element: <NonAuthGuardLayout />,
-				path: "/",
-				children: [
-					{
-						element: <LoginView />,
-						path: "/",
-					},
-				],
-			},
-			{
-				element: <AuthGuardLayout />,
-				path: "/",
 				children: [
 					{
 						element: <NavigationLayout />,
@@ -52,8 +42,15 @@ export const routes: RouteObject[] = [
 								element: <DocumentationView />,
 								path: "/documentation",
 							},
+							{
+								element: <ListBasicMoodsView/>,
+								path: "/basic-moods"
+							},
+							{
+								element: <ListDangerMoodsView/>,
+								path: "/danger-moods"
+							}
 							
-
 						]
 					}
 				]

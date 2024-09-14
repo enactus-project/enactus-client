@@ -29,6 +29,20 @@ const SideBar = () => {
             label="Документация"
           />
         </div>
+        <div className={styles.linkWrapper}>
+          <SideBarLink
+            to="/basic-moods"
+            icon="bx bx-info-circle"
+            label="Все ивенты"
+          />
+        </div>
+        <div className={styles.linkWrapper}>
+          <SideBarLink
+            to="/danger-moods"
+            icon="bx bx-info-circle"
+            label="Опасные ивенты"
+          />
+        </div>
         {/* <div className={styles.linkWrapper}>
           <SideBarLink to="/" icon="/chart-square.svg" label="Админы" />
         </div> */}

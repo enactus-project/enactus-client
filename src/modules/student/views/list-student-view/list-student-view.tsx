@@ -13,19 +13,17 @@ import MedicalAnalysisTable from "@/modules/medical-analysis/components/medical-
 import VideoPage from "@/modules/video-page/components/video-page"
 import CodeModal from "../../components/code-modal"
 
+
 const demoStudent = {
-	id: "1",
-	name: "John",
-	surname: "Doe",
-	state: 1, // Assuming state values: 1 = Good, 2 = Average, 3 = Difficult
-	grade: "excellent",
-	performance: 1,
-	iin: "8609847685",
-	description: "A diligent student",
-	createdAt: "2022-01-01T12:00:00Z", // Sample ISO 8601 timestamp
-	updatedAt: "2022-01-02T10:30:00Z", // Sample ISO 8601 timestamp
-	deletedAt: null, // Null indicates the student is not deleted
-}
+  class: "12B", // Student's class
+  firstName: "Yerdaulet",
+  lastName: "Damir",
+  overallHealth: 1, // Example health rating (1 = good)
+  overallKundelik: 1, // Example academic performance rating (1 = excellent)
+  overallMood: 0, // Example mood rating (0 = neutral)
+  photoUrl: "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png", // Photo URL
+};
+
 
 const ListStudentView = () => {
 	const [student, setStudent] = useState<Student>(demoStudent)

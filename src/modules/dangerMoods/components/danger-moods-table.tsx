@@ -1,20 +1,21 @@
 import { Tag } from 'antd';
 
 import { PaginationMeta } from '@/common/entities';
-import { Student } from '@/common/entities/student';
 import CommonTable from '@/common/components/common-table';
-import styles from './students-table.module.css';
+import styles from './danger-moods-table.module.css'
+import { BasicMood } from '@/common/entities/basic-mood';
+import { DangerMood } from '@/common/entities/danger-mood';
 
 interface Props {
-  students?: Student[];
+  danger_moods?: DangerMood[];
   isLoading?: boolean;
   hasError?: boolean;
   paginationMeta?: PaginationMeta;
   onPageChange?: (page: number) => void;
 }
 
-const StudentsTable = ({
-  students = [],
+const DangerMoodsTable = ({
+  danger_moods = [],
   isLoading = false,
   hasError = false,
   paginationMeta,
@@ -44,40 +45,34 @@ const StudentsTable = ({
             return "black"; // Default color if state doesn't match any specific case
     }
   } 
-  console.log(students, "Students")
 
   return (
     <div className={styles.wrapper}>
       <CommonTable>
         <CommonTable.Header className={styles.row}>
-          <CommonTable.Cell>Фамилия</CommonTable.Cell>
-          <CommonTable.Cell>Имя</CommonTable.Cell>
-          <CommonTable.Cell>Класс</CommonTable.Cell>
-          <CommonTable.Cell>Состояние</CommonTable.Cell>
-          <CommonTable.Cell>Учеба</CommonTable.Cell>
-          <CommonTable.Cell>Настроение</CommonTable.Cell>
+          <CommonTable.Cell>Id</CommonTable.Cell>
+          <CommonTable.Cell>Id камеры</CommonTable.Cell>
+          <CommonTable.Cell>Вид угрозы</CommonTable.Cell>
+          <CommonTable.Cell>Дата</CommonTable.Cell>
+          <CommonTable.Cell>Отправлено</CommonTable.Cell>
         </CommonTable.Header>
         {isLoading && <CommonTable.LoadingIndicator />}
         {!isLoading && hasError && <CommonTable.ErrorPlaceholder />}
-        {!isLoading && !hasError && students.length === 0 && (
+        {!isLoading && !hasError && danger_moods.length === 0 && (
           <CommonTable.EmptyPlaceholder />
         )} 
         {!isLoading &&
           !hasError &&
-          students.map((student) => (
-            <CommonTable.Row key={student.lastName} className={styles.row}>
-              <CommonTable.Cell className={styles.surname}>{student.lastName}</CommonTable.Cell>
-              <CommonTable.Cell className={styles.name}>{student.firstName}</CommonTable.Cell>
-              <CommonTable.Cell>{student.class}</CommonTable.Cell>
+          danger_moods.map((danger_mood) => (
+            <CommonTable.Row key={danger_mood.id} className={styles.row}>
+              <CommonTable.Cell className={styles.surname}>{danger_mood.id}</CommonTable.Cell>
+              <CommonTable.Cell className={styles.name}>{danger_mood.camera_id}</CommonTable.Cell>
+
               <CommonTable.Cell>
-                <Tag color={getColorForState(student.overallHealth)}>{getStateLabel(student.overallHealth)}</Tag>
+                <Tag color={getColorForState(danger_mood.threat_type)}>Харассмент</Tag>
               </CommonTable.Cell>
-              <CommonTable.Cell>
-                <Tag color={getColorForState(student.overallKundelik)}>{getStateLabel(student.overallKundelik)}</Tag>
-              </CommonTable.Cell>
-              <CommonTable.Cell>
-                <Tag color={getColorForState(student.overallMood)}>{getStateLabel(student.overallMood)}</Tag>
-              </CommonTable.Cell>
+              <CommonTable.Cell>{danger_mood.timestamp}</CommonTable.Cell>
+              <CommonTable.Cell>Да</CommonTable.Cell>
             </CommonTable.Row>
           ))}
         {!isLoading && !hasError && paginationMeta && (
@@ -91,4 +86,4 @@ const StudentsTable = ({
   );
 };
 
-export default StudentsTable;
+export default DangerMoodsTable;

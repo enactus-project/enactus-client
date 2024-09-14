@@ -18,24 +18,35 @@ import { Student } from '@/common/entities/student';
   
     //   return students.map((subject) => mapStudentResponseToStudent(subject));
     // }
-    async getStudents(
-        { page = 1 } = { page: 1 },
-      ): Promise<[Student[], PaginationMeta]> {
-        const response = await request.get<{
-          data: { meta: PaginationMetaResponse; admins: StudentResponse[] };
-        }>('/v1/students', {
-          params: {
-            page,
-          },
-        });
+    // async getStudents(
+    //     { page = 1 } = { page: 1 },
+    //   ): Promise<[Student[], PaginationMeta]> {
+    //     const response = await request.get<{
+    //       data: { meta: PaginationMetaResponse; admins: StudentResponse[] };
+    //     }>('/students', {
+    //       params: {
+    //         page,
+    //       },
+    //     });
     
-        const { meta, admins } = response.data.data;
-        console.log(admins, "ADMINS")
-        return [
-            admins.map((admin) => mapStudentResponseToStudent(admin)),
-            mapPaginationMetaResponseToPaginationMeta(meta),
-        ];
+    //     const students = response.data.data;
+    //     console.log(students, "ADMINS")
+    //     return [
+    //         students.map((admin) => mapStudentResponseToStudent(admin)),
+    //         mapPaginationMetaResponseToPaginationMeta(meta),
+    //     ];
+    // }
+    async getStudents(): Promise<Student[]> {
+      const response = await request.get<StudentResponse[]>('/students');
+      
+      const students = response.data; // The array of student objects
+    
+      console.log(students, "STUDENTS");
+    
+      // Map the students to your desired structure
+      return students.map((student) => mapStudentResponseToStudent(student));
     }
+    
 
 
     async getStudentById(studentId?: string): Promise<Student>{

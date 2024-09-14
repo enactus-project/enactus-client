@@ -1,0 +1,191 @@
+.documentation {
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.sidebar {
+	flex: 0 0 200px;
+	padding: 20px;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	overflow-y: auto;
+	order: 2;
+}
+
+.sidebarList li {
+	margin-bottom: 10px;
+	padding: 10px;
+	cursor: pointer;
+	border-bottom: 1px solid #ccc;
+}
+
+.sidebarList li a {
+	color: #333;
+	text-decoration: none;
+	display: block;
+}
+
+.header {
+	margin-bottom: 30px;
+}
+
+.section {
+	margin-bottom: 40px;
+	max-width: 800px;
+	overflow: hidden;
+}
+
+.section h2 {
+	color: #002240;
+	border-bottom: 2px solid #002240;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.section p {
+	color: #333;
+	line-height: 1.6;
+}
+
+.section h3 {
+	color: #002240;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.section ul {
+	list-style-type: none;
+	padding-left: 20px;
+}
+
+.section li {
+	margin-bottom: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.content {
+	flex: 1;
+	padding: 20px;
+	order: 1;
+}
+
+.section {
+	display: none;
+}
+
+.sidebar {
+	width: 200px;
+}
+
+.active {
+	background-color: #ddd;
+	font-weight: bold;
+}
+
+.activeSection {
+	display: block;
+	margin-top: 20px;
+}
+
+.section h2 {
+	margin-bottom: 10px;
+}
+
+.section p {
+	margin-bottom: 15px;
+}
+
+.section ul {
+	margin-bottom: 15px;
+}
+
+.section li {
+	margin-left: 20px;
+}
+
+.tiles {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.tile {
+	flex: 1 0 calc(33.33% - 20px);
+	margin-right: 20px;
+	background-color: #f9f9f9;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.tile h3 {
+	margin-top: 0;
+	font-size: 18px;
+}
+
+.tile p {
+	margin-bottom: 0;
+}
+
+.sidebarList {
+	list-style-type: none;
+	padding: 0;
+}
+
+.sidebarList li {
+	padding: 10px;
+	cursor: pointer;
+	border-bottom: 1px solid #ccc;
+}
+
+.tiles {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tile:last-child {
+	margin-right: 0;
+}
+
+.tile p {
+	margin-bottom: 10px;
+}
+
+.tile {
+	flex: 1 0 calc(33.33% - 20px);
+	margin-right: 20px;
+	background-color: #f9f9f9;
+	padding: 20px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+}
+
+.tile h3 {
+	margin-top: 0;
+	font-size: 18px;
+}
+
+.feature {
+	padding: 20px;
+	border: 2px solid #002240;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.featureBorder {
+	border-color: #ccc;
+}
+
+.requirements {
+	padding: 20px;
+	border: 2px solid #002240;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.requirementsBorder {
+	border-color: #ccc;
+}

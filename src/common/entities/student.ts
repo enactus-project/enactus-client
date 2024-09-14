@@ -10,16 +10,27 @@
 // 	updatedAt: string
 // 	deletedAt: string | null
 // }
+// export interface Student {
+//     id: string;
+//     name?: string;
+//     surname: string;
+//     state: number;
+//     iin: string;
+//     vk?: string; // Optional fields
+//     insta?: string;
+//     tiktok?: string;
+//     createdAt: string;
+//     updatedAt: string;
+//     deletedAt: string | null;
+// }
+
 export interface Student {
-    id: string;
-    name?: string;
-    surname: string;
-    state: number;
-    iin: string;
-    vk?: string; // Optional fields
-    insta?: string;
-    tiktok?: string;
-    createdAt: string;
-    updatedAt: string;
-    deletedAt: string | null;
-}
+    class: string;
+    firstName: string;
+    lastName: string;
+    overallHealth: number;
+    overallKundelik: number;
+    overallMood: number;
+    photoUrl: string;
+  }
+  
