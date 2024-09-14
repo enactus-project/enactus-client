@@ -20,18 +20,27 @@ const StudentsTable = ({
   paginationMeta,
   onPageChange = () => ({}),
 }: Props) => {
-  const getStateLabel = (role: number) => {
-    switch (role) {
-      case 0:
-        return 'Плохо';
+  const getStateLabel = (emotion: number) => {
+    switch (emotion) {
       case 1:
-        return 'Нейтрально';
+        return 'Злой'; // Angry
       case 2:
-        return 'Хорошо';
+        return 'Отвратительно'; // Disgust
+      case 3:
+        return 'Страх'; // Fear
+      case 4:
+        return 'Счастливый'; // Happy
+      case 5:
+        return 'Нейтрально'; // Neutral
+      case 6:
+        return 'Грустный'; // Sad
+      case 7:
+        return 'Удивлённый'; // Surprise
       default:
-        return 'Неизвестно';
+        return 'Неизвестно'; // Unknown
     }
   };
+  
   const getColorForState = (state: number) => {
     switch (state) {
         case 0:
@@ -50,6 +59,7 @@ const StudentsTable = ({
     <div className={styles.wrapper}>
       <CommonTable>
         <CommonTable.Header className={styles.row}>
+        <CommonTable.Cell></CommonTable.Cell>
           <CommonTable.Cell>Фамилия</CommonTable.Cell>
           <CommonTable.Cell>Имя</CommonTable.Cell>
           <CommonTable.Cell>Класс</CommonTable.Cell>
@@ -66,6 +76,7 @@ const StudentsTable = ({
           !hasError &&
           students.map((student) => (
             <CommonTable.Row key={student.lastName} className={styles.row}>
+              <CommonTable.Cell className={styles.surname}><img src={student.photoUrl} width={50} height={50}/></CommonTable.Cell>
               <CommonTable.Cell className={styles.surname}>{student.lastName}</CommonTable.Cell>
               <CommonTable.Cell className={styles.name}>{student.firstName}</CommonTable.Cell>
               <CommonTable.Cell>{student.class}</CommonTable.Cell>
