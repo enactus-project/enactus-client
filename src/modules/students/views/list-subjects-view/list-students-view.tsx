@@ -17,15 +17,11 @@ const ListStudentsView = () => {
   const [students, setStudents] = useState<Student[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false);
-  const [paginationMeta, setPaginationMeta] = useState<PaginationMeta>({
+  const [paginationMeta] = useState<PaginationMeta>({
     page: 1,
     perPage: 20,
     total: 0,
   });
-  const [isEditDescriptionModalSubmitLoading, setIsEditDescriptionModalSubmitLoading] =
-  useState<boolean>(false);
-  const [editingDescription, setEditingDescription] = useState<Student| null>(null);
-  const [isEditDescriptionModalVisible, setIsEditDescriptionModalVisible] =
     useState<boolean>(false);
   const [isCreateStudentModalVisible, setIsCreateStudentModalVisible] =
     useState<boolean>(false);
@@ -80,11 +76,6 @@ const ListStudentsView = () => {
     loadStudents();
   };
 
-  const handleEditTopicModalClose = () => {
-    setIsEditDescriptionModalVisible(false);
-    setEditingDescription(null);
-  };
-
   const handleAddStudentClick = () => {
     setIsCreateStudentModalVisible(true);
   };
@@ -93,9 +84,6 @@ const ListStudentsView = () => {
     setIsCreateStudentModalVisible(false);
   };
 
-  const handleDescriptionEditClick = () => {
-    setIsEditDescriptionModalVisible(true);
-  };
  
   // const handleEditTopicModalSubmit = async (payload: {name: string, surname:string, state:number, description: string}) => {
  

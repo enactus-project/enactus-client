@@ -20,18 +20,6 @@ const DangerMoodsTable = ({
   paginationMeta,
   onPageChange = () => ({}),
 }: Props) => {
-  const getStateLabel = (role: number) => {
-    switch (role) {
-      case 0:
-        return 'Плохо';
-      case 1:
-        return 'Нейтрально';
-      case 2:
-        return 'Хорошо';
-      default:
-        return 'Неизвестно';
-    }
-  };
   const getColorForState = (state: number) => {
     switch (state) {
         case 0:
