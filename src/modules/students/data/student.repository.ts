@@ -2,10 +2,8 @@ import {
     request,
     StudentResponse,
   } from '@/common/api';
-import { mapPaginationMetaResponseToPaginationMeta } from '@/common/api/mappers/pagination-meta.mapper';
+
 import { mapStudentResponseToStudent } from '@/common/api/mappers/student.mapper';
-import { PaginationMetaResponse } from '@/common/api/responses/pagination-meta.response';
-import { PaginationMeta } from '@/common/entities';
 import { Student } from '@/common/entities/student';
   
   export class StudentsRepository {

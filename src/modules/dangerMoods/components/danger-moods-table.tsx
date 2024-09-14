@@ -3,7 +3,6 @@ import { Tag } from 'antd';
 import { PaginationMeta } from '@/common/entities';
 import CommonTable from '@/common/components/common-table';
 import styles from './danger-moods-table.module.css'
-import { BasicMood } from '@/common/entities/basic-mood';
 import { DangerMood } from '@/common/entities/danger-mood';
 
 interface Props {
