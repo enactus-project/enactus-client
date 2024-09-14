@@ -13,7 +13,6 @@ interface Props {
 }
 
 const MedicalAnalysisTable = ({
-	med,
 	isLoading = false,
 	hasError = false,
 	paginationMeta,

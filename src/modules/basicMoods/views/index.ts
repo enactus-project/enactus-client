@@ -1,3 +1,3 @@
-import DocumentationView from "./documentation-page";
+import DocumentationView from "./basic-moods";
 
 export default DocumentationView

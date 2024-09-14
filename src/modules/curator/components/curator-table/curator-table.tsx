@@ -1,4 +1,3 @@
-import { Tag } from "antd"
 import { PaginationMeta } from "@/common/entities"
 import { Student } from "@/common/entities/student"
 import CommonTable from "@/common/components/common-table"
@@ -16,38 +15,8 @@ const CuratorStudentsTable = ({
 	students = [],
 	isLoading = false,
 	hasError = false,
-	paginationMeta,
-	onPageChange = () => ({}),
 }: Props) => {
-	const getStateLabelPerformance = (performance: number) => {
-		switch (performance) {
-			case 1:
-				return { label: "Отличная", color: "green" }
-			case 2:
-				return { label: "Хорошая", color: "lime" }
-			case 3:
-				return { label: "Удовлетворительная", color: "yellow" }
-			case 4:
-				return { label: "Ниже среднего", color: "orange" }
-			case 5:
-				return { label: "Плохая", color: "red" }
-			default:
-				return { label: "-" }
-		}
-	}
 
-	const getColorForState = (state: number) => {
-		switch (state) {
-			case 1:
-				return { label: "Хороший", color: "cyan" }
-			case 2:
-				return { label: "Средний", color: "geekblue" }
-			case 3:
-				return { label: "Сложный", color: "red" }
-			default:
-				return { label: "-" }
-		}
-	}
 
 	return (
 		<div className={styles.wrapper}>
